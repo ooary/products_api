@@ -2,7 +2,10 @@
   "build": {
     "builder": "GOLANG",
     "args": {
-      "GO_BUILD_TARGET": "./cmd/api"
+      "GO_BUILD_TARGET": "cmd/api/main.go"
     }
+  },
+  "run": {
+    "command": "./main"
   }
 }
