@@ -1,0 +1,8 @@
+{
+  "build": {
+    "builder": "GOLANG",
+    "args": {
+      "GO_BUILD_TARGET": "./cmd/api"
+    }
+  }
+}
