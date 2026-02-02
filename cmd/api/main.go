@@ -50,7 +50,7 @@ func main() {
 	mux.HandleFunc("PUT /api/products/update", productHandler.UpdateProduct)
 	mux.HandleFunc("DELETE /api/products/delete/{id}", productHandler.DeleteProduct)
 
-	listener, err := net.Listen("tcp", ":"+config.PORT)
+	listener, err := net.Listen("tcp", "0.0.0.0:"+config.PORT)
 
 	if err != nil {
 		fmt.Println("Error Listening", err.Error())
