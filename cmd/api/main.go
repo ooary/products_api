@@ -39,8 +39,16 @@ func main() {
 	productHandler := handlers.NewProductHandler(productService)
 
 	mux := http.NewServeMux()
+	mux.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println("Products API")
+		fmt.Fprint(w, "Simple Products API")
+	})
 
 	mux.HandleFunc("GET /api/products", productHandler.GetAllProducts)
+	mux.HandleFunc("GET /api/products/{id}", productHandler.GetProductById)
+	mux.HandleFunc("POST /api/products/create", productHandler.CreateProduct)
+	mux.HandleFunc("PUT /api/products/update", productHandler.UpdateProduct)
+	mux.HandleFunc("DELETE /api/products/delete/{id}", productHandler.UpdateProduct)
 
 	listener, err := net.Listen("tcp", ":"+config.PORT)
 
