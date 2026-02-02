@@ -48,7 +48,7 @@ func main() {
 	mux.HandleFunc("GET /api/products/{id}", productHandler.GetProductById)
 	mux.HandleFunc("POST /api/products/create", productHandler.CreateProduct)
 	mux.HandleFunc("PUT /api/products/update", productHandler.UpdateProduct)
-	mux.HandleFunc("DELETE /api/products/delete/{id}", productHandler.UpdateProduct)
+	mux.HandleFunc("DELETE /api/products/delete/{id}", productHandler.DeleteProduct)
 
 	listener, err := net.Listen("tcp", ":"+config.PORT)
 
